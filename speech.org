@@ -1,0 +1,83 @@
+#+title: Speech
+
+* Intro
+- According to... an estimated 70% of critical vulnerabilities in software fall into the category of memory safety issues.
+- These are vulnerabilities caused by accessing or interacting with memory incorrectly.
+  - For example: use after free.
+- Such a problem because almost all important software is written in memory unsafe languages (like C & C++) (checks).
+- Evidently a need; at the moment, only one, Rust, which can; here's why.
+* Rust
+- Programming language.
+- Aims to be both safe and performant.
+* Reliability <--- DONT SAY THIS
+- The problem with C & C++, and why we need to replace them, is they're memory unsafe.
+- Rust is really great at memory safety.
+  - Checks.
+  - Tools.
+- Compiler.
+  - What?.
+  - Forces follow best practices, and rules, making you write better code.
+  - Types known at compile time.
+    - Stops us using the wrong type of data by accident.
+    - Causes TONS of bugs.
+  - Borrow checker.
+    - Unique.
+    - Means you dont have to manually say...
+      - Which you do have to do in C & C++.
+      - Also causes lots of bugs because... you might forget... or try to access memory you've already freed.
+  - Since it's part of the compiler, all happens before the code runs.
+    - Instead of having to run the code and try to make things go wrong it tells you whats wrong immidiately.
+  - No null types.
+    - What is it? (example)
+    - Why can't this work in Rust?
+    - Benefits of not having a null type.
+      - Forces you to...
+  - As compared with the two most popular...
+    - Dont have a compiler.
+    - No type safety, meaning you could accidentally put the wrong type of data...
+    - Which is really annoying and hard to debug, because you have it can be really hard to track down the problem.
+  - COUNTERPOINT: Can't prevent all crashes.
+    - Eg: Vecs
+      - List.
+      - Grow and shrink.
+      - Compiler has no idea.
+      - OOB.
+      - In fairness, no language I know of...
+      - And you can still avoid this crash if you check.
+* Performance
+- There are other languages, but they:
+  - Can't replace C & C++.
+  - Too slow.
+- Rust doesn't have this problem, as it has great performance,.
+- Firstly: Almost no runtime.
+  - Doesnt require anything else to be running at the same time as your code, which would reduce performance.
+  - EG: Many languages have something called a garbage collector.
+    - Has to run at the same time as your code.
+    - Rust doesn't use this, because it has the borrow checker instead, compile time, no overhead.
+  - Makes it suitable for embedded systems.
+    - Small devices, with very little memory, like dishwashers and calculators.
+- Only uses zero-cost abstractions.
+  - In programming an abstraction is like a layer we add over the actual implementation of something, so that the user doesn't have to worry about the complexities of it.
+  - Example: print, very complicated, don't need to worry...
+  - Zero-cost are ones which, in the process of making things simpler, don't make them slower, so you couldn't do the task they help with faster, by not using them, and doing it the more complicated way.
+- All in all... simular to C... as fast as it gets.
+* Productivity
+- Error messages.
+  - Tell you exactly whats wrong, where, and sometimes even how to fix it.
+  - Also get them before you even run the code.
+    - Can see them as soon as you press save.
+- Macros
+  - Too complicated, but basically just code which writes more code.
+  - VERY COOL.
+  - Saves lots of time.
+- COUNTERPOINT
+  - Having to follow... forced to write good code... slower iteration... important when...
+  - Slow end... compiling... how much it does.
+  - Steep learning curve... staircase... /very/ unproductive when you start.
+  - However: feels really intuitive when you get it down.
+    - Able to write code really fast because the compiler keeps track of the type data in every variable.
+      - Dont have to think about it.
+    - Since the error messages are so good, and... before it even runs... often works first try.
+* Conclusion
+- Rust is, at the moment, the only real option to replace C&C++.
+- There are other memory safe languages, but none which have the right comination of safety and performance needed, which Rust does.
